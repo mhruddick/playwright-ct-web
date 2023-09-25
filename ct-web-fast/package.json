@@ -7,15 +7,17 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui"
   },
   "dependencies": {
     "@microsoft/fast-element": "~1.12.0",
     "@microsoft/fast-foundation": "~2.46.14"
   },
   "devDependencies": {
-    "@sand4rt/experimental-ct-web": "workspace:*",
     "@playwright/test": "^1.38.1",
+    "@sand4rt/experimental-ct-web": "workspace:*",
+    "@types/node": "^20.6.5",
     "typescript": "^5.1.3",
     "vite": "^4.4.7"
   }

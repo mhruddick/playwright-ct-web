@@ -1,10 +1,25 @@
-import { FASTElement, attr, customElement, html } from "@microsoft/fast-element";
+import {
+  FASTElement,
+  observable,
+  customElement,
+  html,
+} from "@microsoft/fast-element";
 
-let remountCount = 0 
+let remountCount = 0;
 
-@customElement('counter-component')
+@customElement({
+  name: "counter-component",
+  template: html<Counter>`
+    <div @click=${(x) => x.onClick()}>
+      <div id="props">${(x) => x.count}</div>
+      <div id="remount-count">${_ => remountCount}</div>
+      <slot name="main"></slot>
+      <slot></slot>
+    </div>
+  `,
+})
 export class Counter extends FASTElement {
-  @attr
+  @observable
   count!: number;
 
   constructor() {
@@ -13,17 +28,6 @@ export class Counter extends FASTElement {
   }
 
   onClick() {
-    this.dispatchEvent(new CustomEvent('submit', { detail: 'hello' }));
-  }
-  
-  render() {
-    return html`
-      <div  @click=${this.onClick}>
-        <div id="props">${this.count}</div>
-        <div id="remount-count">${remountCount}</div>
-        <slot name="main"></slot>
-        <slot></slot>
-      </div>
-    `;
+    this.dispatchEvent(new CustomEvent("submit", { detail: "hello" }));
   }
 }

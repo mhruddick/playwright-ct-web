@@ -1,15 +1,21 @@
-import { FASTElement, attr, customElement, html } from "@microsoft/fast-element";
+import {
+  FASTElement,
+  attr,
+  customElement,
+  html,
+} from "@microsoft/fast-element";
 
-@customElement('button-component')
+@customElement({
+  name: "button-component",
+  template: html<Button>`
+    <button @click=${(x) => x.onClick()}>${(x) => x.title}</button>
+  `,
+})
 export class Button extends FASTElement {
   @attr
   title!: string;
 
   onClick() {
-    this.dispatchEvent(new CustomEvent('submit', { detail: 'hello' }));
-  }
-
-  render() {
-    return html`<button @click=${this.onClick}>${this.title}</button>`;
+    this.dispatchEvent(new CustomEvent("submit", { detail: "hello" }));
   }
 }

@@ -21,7 +21,7 @@ importers:
         version: 5.1.3
       vite:
         specifier: ^4.4.7
-        version: 4.4.7
+        version: 4.4.7(@types/node@20.6.5)
 
   ct-web-fast:
     dependencies:
@@ -38,12 +38,15 @@ importers:
       '@sand4rt/experimental-ct-web':
         specifier: workspace:*
         version: link:../playwright-ct-web
+      '@types/node':
+        specifier: ^20.6.5
+        version: 20.6.5
       typescript:
         specifier: ^5.1.3
         version: 5.1.3
       vite:
         specifier: ^4.4.7
-        version: 4.4.7
+        version: 4.4.7(@types/node@20.6.5)
 
   ct-web-lit:
     dependencies:
@@ -62,7 +65,7 @@ importers:
         version: 5.1.3
       vite:
         specifier: ^4.4.7
-        version: 4.4.7
+        version: 4.4.7(@types/node@20.6.5)
 
   playwright-ct-web:
     dependencies:
@@ -71,7 +74,7 @@ importers:
         version: 1.38.1
       vite:
         specifier: ^4.4.7
-        version: 4.4.7
+        version: 4.4.7(@types/node@20.6.5)
     devDependencies:
       '@playwright/test':
         specifier: 1.38.1
@@ -291,7 +294,7 @@ packages:
     dependencies:
       playwright: 1.38.1
       playwright-core: 1.38.1
-      vite: 4.4.7
+      vite: 4.4.7(@types/node@20.6.5)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -309,6 +312,9 @@ packages:
     dependencies:
       playwright: 1.38.1
     dev: true
+
+  /@types/node@20.6.5:
+    resolution: {integrity: sha512-2qGq5LAOTh9izcc0+F+dToFigBWiK1phKPt7rNhOqJSr35y8rlIBjDwGtFSgAI6MGIhjwOVNSQZVdJsZJ2uR1w==}
 
   /@types/trusted-types@2.0.3:
     resolution: {integrity: sha512-NfQ4gyz38SL8sDNrSixxU2Os1a5xcdFxipAFxYEuLUlvU2uDwS4NUpsImcf1//SlWItCVMMLiylsxbmNMToV/g==}
@@ -431,7 +437,7 @@ packages:
     hasBin: true
     dev: true
 
-  /vite@4.4.7:
+  /vite@4.4.7(@types/node@20.6.5):
     resolution: {integrity: sha512-6pYf9QJ1mHylfVh39HpuSfMPojPSKVxZvnclX1K1FyZ1PXDOcLBibdq5t1qxJSnL63ca8Wf4zts6mD8u8oc9Fw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -459,6 +465,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.6.5
       esbuild: 0.18.17
       postcss: 8.4.27
       rollup: 3.27.0

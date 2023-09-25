@@ -1,8 +1,7 @@
 import { FASTElement, customElement, html } from "@microsoft/fast-element";
 
-@customElement('component-component')
-export class Component extends FASTElement {
-  render() {
-    return html`<div>test</div>`;
-  }
-}
+@customElement({
+  name: "component-component",
+  template: html<Component>`<div>test</div>`,
+})
+export class Component extends FASTElement {}
