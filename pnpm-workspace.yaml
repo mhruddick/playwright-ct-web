@@ -1,4 +1,5 @@
 packages:
   - 'ct-web/**'
+  - 'ct-web-fast/**'
   - 'ct-web-lit/**'
   - 'playwright-ct-web/**'
